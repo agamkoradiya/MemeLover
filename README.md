@@ -1,6 +1,9 @@
 # MemeLover
 ![meme poster](https://user-images.githubusercontent.com/54389203/124240480-69866900-db38-11eb-8a5a-6778e877d52a.jpg)
 
+# App Preview
+![demo_gif](https://user-images.githubusercontent.com/54389203/124252859-0d761180-db45-11eb-9328-c17cdada3c34.gif)
+
 # SetUp
 1. Clone this project
 2. Connect with firebase
@@ -71,5 +74,13 @@ telegram :
 # Used API
 1. [Meme Gen](https://memegen.link/)
 2. [Img FLip](https://imgflip.com/api)
-
+  - Some usernames and passwords [Paste it in ImgFlipApi.kt]
+      - ```
+        username: laqegydy
+        password: laqegydy
+        ```
+      - ```
+        username: vilixenu
+        password: vilixenu123
+        ```
 # Thank you
