@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.HomeFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        style="@style/Widget.App.CardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardBackgroundColor="@color/yellow"
+        app:cardElevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/create_new_meme_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:padding="3dp"
+                android:text="@string/create_your_meme"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/hot_topics_material_card_view"
+                style="@style/Widget.App.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/yellow"
+                app:cardElevation="3dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="17dp"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:id="@+id/topics_info_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/white_bg_box"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:padding="3dp"
+                        android:text="@string/ideas_for_meme"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/topics_title_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/topics_info_txt"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:padding="3dp"
+                        android:text="@string/hot_topics"
+                        android:textColor="@color/black"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/topics_drop_down_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/topics_info_txt"
+                        android:layout_alignBottom="@id/topics_title_txt"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:backgroundTint="#000000"
+                        android:contentDescription="@string/content_description"
+                        android:src="@drawable/ic_down_arrow" />
+
+                    <ProgressBar
+                        android:id="@+id/topics_progress_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/topics_info_txt"
+                        android:layout_alignBottom="@id/topics_title_txt"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:indeterminateTint="@color/white"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/hot_topics_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:nestedScrollingEnabled="false"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/instagram_material_card_view"
+                style="@style/Widget.App.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/yellow">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="17dp"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:id="@+id/instagram_info_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/white_bg_box"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:padding="3dp"
+                        android:text="@string/top_instagram_account_for_meme"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/instagram_title_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/instagram_info_txt"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:padding="3dp"
+                        android:text="@string/instagram"
+                        android:textColor="@color/black"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/instagram_drop_down_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/instagram_info_txt"
+                        android:layout_alignBottom="@id/instagram_title_txt"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:backgroundTint="#000000"
+                        android:contentDescription="@string/content_description"
+                        android:src="@drawable/ic_down_arrow" />
+
+                    <ProgressBar
+                        android:id="@+id/instagram_progress_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/instagram_info_txt"
+                        android:layout_alignBottom="@id/instagram_title_txt"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:indeterminateTint="@color/white"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/instagram_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:nestedScrollingEnabled="false"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/discord_material_card_view"
+                style="@style/Widget.App.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/yellow">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="17dp"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:id="@+id/discord_info_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/white_bg_box"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:padding="3dp"
+                        android:text="@string/best_discord_server_for_meme"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/discord_title_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/discord_info_txt"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:padding="3dp"
+                        android:text="@string/discord"
+                        android:textColor="@color/black"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/discord_drop_down_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/discord_info_txt"
+                        android:layout_alignBottom="@id/discord_title_txt"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:backgroundTint="#000000"
+                        android:contentDescription="@string/content_description"
+                        android:src="@drawable/ic_down_arrow" />
+
+
+                    <ProgressBar
+                        android:id="@+id/discord_progress_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/discord_info_txt"
+                        android:layout_alignBottom="@id/discord_title_txt"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:indeterminateTint="@color/white"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/discord_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:nestedScrollingEnabled="false"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/telegram_material_card_view"
+                style="@style/Widget.App.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/yellow">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="17dp"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:id="@+id/telegram_info_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/white_bg_box"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:padding="3dp"
+                        android:text="@string/best_telegram_channel_for_meme"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/telegram_title_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/telegram_info_txt"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:padding="3dp"
+                        android:text="@string/telegram"
+                        android:textColor="@color/black"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/telegram_drop_down_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/telegram_info_txt"
+                        android:layout_alignBottom="@id/telegram_title_txt"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:backgroundTint="#000000"
+                        android:contentDescription="@string/content_description"
+                        android:src="@drawable/ic_down_arrow" />
+
+
+                    <ProgressBar
+                        android:id="@+id/telegram_progress_bar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/telegram_info_txt"
+                        android:layout_alignBottom="@id/telegram_title_txt"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:indeterminateTint="@color/white"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/telegram_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:nestedScrollingEnabled="false"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

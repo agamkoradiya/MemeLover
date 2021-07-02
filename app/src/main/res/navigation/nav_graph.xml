@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.mymeme.ui.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_templatesFragment"
+            app:destination="@id/templatesFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/templatesFragment"
+        android:name="com.example.mymeme.ui.fragment.TemplatesFragment"
+        android:label="fragment_templates"
+        tools:layout="@layout/fragment_templates">
+        <action
+            android:id="@+id/action_templatesFragment_to_memeGenMakerFragment"
+            app:destination="@id/memeGenMakerFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_templatesFragment_to_imgFlipMakerFragment"
+            app:destination="@id/imgFlipMakerFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/memeGenMakerFragment"
+        android:name="com.example.mymeme.ui.fragment.MemeGenMakerFragment"
+        android:label="fragment_meme_gen_maker"
+        tools:layout="@layout/fragment_meme_gen_maker">
+        <argument
+            android:name="memeGenTemplateItem"
+            app:argType="com.example.mymeme.data.entities.MemeGenTemplateItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/imgFlipMakerFragment"
+        android:name="com.example.mymeme.ui.fragment.ImgFlipMakerFragment"
+        android:label="fragment_img_flip_maker"
+        tools:layout="@layout/fragment_img_flip_maker">
+        <argument
+            android:name="imgFlipTemplateItem"
+            app:argType="com.example.mymeme.data.entities.Meme" />
+    </fragment>
+</navigation>

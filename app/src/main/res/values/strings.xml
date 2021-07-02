@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">My Meme</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ideas_for_meme">IDEAS FOR MEME</string>
+    <string name="hot_topics">HOT TOPICS</string>
+    <string name="content_description">Drop Down Button</string>
+    <string name="top_instagram_account_for_meme">TOP INSTAGRAM ACCOUNT FOR MEME</string>
+    <string name="instagram">INSTAGRAM</string>
+    <string name="best_discord_server_for_meme">BEST DISCORD SERVER FOR MEME</string>
+    <string name="discord">DISCORD</string>
+    <string name="best_telegram_channel_for_meme">BEST TELEGRAM CHANNEL FOR MEME</string>
+    <string name="telegram">TELEGRAM</string>
+    <string name="create_your_meme">CREATE YOUR MEME</string>
+    <string name="check_mark_button">Check Mark Button</string>
+    <string name="download_button">Download Button</string>
+    <string name="first_line">1st line</string>
+    <string name="second_line">2nd line</string>
+    <string name="third_line">3rd line</string>
+    <string name="forth_line">4th line</string>
+    <string name="fifth_line">5th line</string>
+    <string name="question_mark">\?</string>
+    <string name="retry">Retry</string>
+    <string name="height">Height</string>
+    <string name="width">Width</string>
+    <string name="custom_size">1080</string>
+    <string name="template_preview">Template Preview</string>
+</resources>
